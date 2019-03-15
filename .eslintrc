@@ -1,0 +1,11 @@
+{
+	"plugins": [
+		"react"
+	  ],
+	"rules": {
+	  "max-len": [1, 120, 2, {"ignoreComments": true}],
+	  "no-tabs": ["error", { "allowIndentationTabs": true }],
+	  "indent": ["error", "tab"]
+	},
+	"extends": ["airbnb-base"]
+  }
