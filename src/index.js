@@ -1,22 +1,33 @@
-import C from './constants';
-import { errors } from './store/reducers';
+import React from 'react';
+import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import sampleData from './initialState';
+import storeFactory, { history } from './store';
+import Routes from './components/routes';
 
-const state = [
-	'user not authorized',
-	'server feed not found',
-];
+const initialState = (localStorage['redux-store'])
+	? JSON.parse(localStorage['redux-store'])
+	: sampleData;
 
-const action = {
-	type: C.CLEAR_ERROR,
-	payload: 0,
-};
+const store = storeFactory(initialState);
 
-const nextState = errors(state, action);
+render(
+	<AppContainer>
+		<Routes store={store} history={history} />
+	</AppContainer>,
+	document.getElementById('app'),
+);
 
-console.log(`
-
-    initial state: ${state}
-    action: ${JSON.stringify(action)}
-    new state: ${JSON.stringify(nextState)}
-
-`);
+if (module.hot) {
+	module.hot.accept('./components/routes', () => {
+		/* eslint-disable global-require */
+		const NewRoutes = require('./components/routes').default;
+		/* eslint-enable global-require */
+		render(
+			<AppContainer>
+				<NewRoutes store={store} history={history} />
+			</AppContainer>,
+			document.getElementById('app'),
+		);
+	});
+}

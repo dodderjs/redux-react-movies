@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 import C from '../constants';
 
 export const errors = (state = [], action) => {
@@ -16,6 +18,7 @@ export const errors = (state = [], action) => {
 	}
 };
 
-export default {
+export default (history) => combineReducers({
 	errors,
-};
+	router: connectRouter(history),
+});
