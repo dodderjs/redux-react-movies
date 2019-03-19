@@ -16,7 +16,7 @@ const middlewares = [
 	consoleMessages,
 ];
 
-export default (initialState) => {
+export default (initialState = {}) => {
 	const store = createStore(
 		appReducer(history),
 		initialState,

@@ -63,6 +63,8 @@
 		"react-router-dom": "^4.3.1",
 		"react-router-prop-types": "^1.0.4",
 		"react-router-redux": "^4.0.8",
+		"react-tv": "^0.4.3",
+		"react-tv-navigation": "^0.4.3",
 		"redux": "^4.0.1",
 		"redux-immutable-state-invariant": "^2.1.0",
 		"redux-thunk": "^2.3.0"

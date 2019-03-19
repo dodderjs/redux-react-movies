@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './spinner.scss';
+
 const Loader = (props) => {
 	const { className } = props;
 	const finalClassName = `${className} spinner`;

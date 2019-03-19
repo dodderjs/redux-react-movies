@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import App from '.';
+import PrivateRoute from './containers/PrivateRoute';
+import MediaPage from './pages/MediaPage';
 import Whoops404 from './ui/404';
 
 const Routes = ({ store, history }) => (
@@ -12,6 +14,7 @@ const Routes = ({ store, history }) => (
 		<ConnectedRouter history={history}>
 			<App>
 				<Switch>
+					<PrivateRoute path="/" exact component={MediaPage} />
 					<Route path="*" component={Whoops404} />
 				</Switch>
 			</App>

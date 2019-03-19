@@ -1,13 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import sampleData from './initialState';
 import storeFactory, { history } from './store';
 import Routes from './components/routes';
 
 const initialState = (localStorage['redux-store'])
 	? JSON.parse(localStorage['redux-store'])
-	: sampleData;
+	: {};
 
 const store = storeFactory(initialState);
 
@@ -15,7 +14,7 @@ render(
 	<AppContainer>
 		<Routes store={store} history={history} />
 	</AppContainer>,
-	document.getElementById('app'),
+	document.getElementById('App'),
 );
 
 if (module.hot) {
@@ -27,7 +26,7 @@ if (module.hot) {
 			<AppContainer>
 				<NewRoutes store={store} history={history} />
 			</AppContainer>,
-			document.getElementById('app'),
+			document.getElementById('App'),
 		);
 	});
 }

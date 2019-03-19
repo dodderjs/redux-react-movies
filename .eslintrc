@@ -25,7 +25,9 @@
 		"react/jsx-filename-extension": "off",
 		"no-underscore-dangle": "off",
 		"import/prefer-default-export": "off",
-		"arrow-parens": "off"
+		"arrow-parens": "off",
+		"comma-dangle": "off",
+		"react/jsx-indent-props": "off"
 	},
 	"env": {
 		"es6": true,

@@ -1,0 +1,57 @@
+@import '../scss-mixin/animations';
+
+$size: 14rem;
+$lineWidth: .6rem;
+$gap: 1.6rem;
+$colors: (#2172b8, #f8b739, #ed2861, #c12680 );
+$anim: (cubic-bezier(0.09, 0.3, 0.12, 0.03), 
+		cubic-bezier(0.09, 0.6, 0.24, 0.03),
+		cubic-bezier(0.09, 0.9, 0.36, 0.03),
+		cubic-bezier(0.09, 1.2, 0.48, 0.03));
+
+div.spinner {
+	@include _animation(rotate, 10s, infinite, linear);
+	display: block;
+	margin: auto;
+	width: $size;
+	height: $size;
+	margin-left: -$size / 2;
+	left: 50%;
+	z-index: 1000;
+	position: absolute;
+	top: 230px;
+
+	&.spinner__inline {
+		position: relative;
+		height: 150px;
+		top: 0;
+	}
+
+	i {
+		@include _animation(rotate, 3s, infinite, cubic-bezier(0.09, 0.6, 0.8, 0.03));
+		@include _transform-origin(50%, 100%, 0);
+		position: absolute;
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+		border: solid $lineWidth transparent;
+		border-bottom: none;
+	}
+
+	@for $i from 1 to 5 {
+		$iSize: $size - (($lineWidth + $gap) * $i);
+
+		i:nth-child(#{$i}) {
+			@include _animation-timing-function(nth($anim, $i));
+			width: $iSize;
+			height: $iSize / 2;
+			margin-top: -$iSize / 2;
+			margin-left: -$iSize / 2;
+			border-color: nth($colors, $i);
+			border-top-left-radius: $iSize;
+			border-top-right-radius: $iSize;
+		}
+	}
+}
+
+@include _transform-keyframes(rotate, rotate(360deg));

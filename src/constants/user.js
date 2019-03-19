@@ -1,0 +1,7 @@
+const constants = {
+	GET: 'USER_GET',
+	FETCH_FULFILLED: 'USER_FETCH_FULFILLED',
+	FETCH_REJECTED: 'USER_FETCH_REJECTED',
+	LOGOUT: 'USER_LOGOUT',
+};
+export default constants;

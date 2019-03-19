@@ -4,7 +4,6 @@ import { PropTypes } from 'prop-types';
 
 import '../stylesheets/scss/normalize.scss';
 import '../stylesheets/scss/core.scss';
-import '../stylesheets/scss/spinner.scss';
 import '../stylesheets/scss/app.scss';
 
 const App = hot(module)(({ children }) => (

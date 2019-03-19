@@ -1,16 +1,17 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
-import C from '../constants';
+import ERROR from '../constants/error';
+import userReducer from './userReducer';
 
 export const errors = (state = [], action) => {
 	switch (action.type) {
-	case C.ADD_ERROR:
+	case ERROR.ADD:
 		return [
 			...state,
 			action.payload,
 		];
 
-	case C.CLEAR_ERROR:
+	case ERROR.CLEAR:
 		return state.filter((message, i) => i !== action.payload);
 
 	default:
@@ -20,5 +21,6 @@ export const errors = (state = [], action) => {
 
 export default (history) => combineReducers({
 	errors,
+	user: userReducer,
 	router: connectRouter(history),
 });

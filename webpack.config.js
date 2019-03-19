@@ -29,15 +29,7 @@ module.exports = {
 		contentBase: './dist',
 		port: 3000,
 		hot: true,
-		historyApiFallback: true,
-		proxy: {
-			'/api/**': {
-				target: 'https://react-rent.herokuapp.com',
-				pathRewrite: { '^/api': '' },
-				changeOrigin: true,
-				secure: true,
-			},
-		},
+		historyApiFallback: true
 	},
 	serve: {
 		port: 3300,
