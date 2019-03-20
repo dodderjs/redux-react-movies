@@ -3,16 +3,16 @@
 
 .login-form {
 	display: block;
-	margin-left: 24px;
-	margin-right: 24px;
+	margin: 0 24px;
 	background: $base;
 	padding: 20px;
-	margin-top: 64px;
 	align-items: center;
 	flex-direction: column;
 	border-radius: 4px;
 	color: $text-dark;
-	
+	top: 64px;
+	position: relative;
+
 	.login-form-title {
 		text-align: center;
 		
@@ -44,5 +44,6 @@
 		margin: 0 auto;
 		padding: 8rem 2rem 10rem;
 		width: 400px;
+		top: 40px;
 	}
 }

@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import { withFocusable } from 'react-tv-navigation';
 
 const Button = ({
-	label, type, focused, setFocus, focusPath, onEnterPressHandler, ...buttonProps
-// eslint-disable-next-line react/button-has-type
-}) => (<button type={type} {...buttonProps}>{label}</button>);
+	type, focused, setFocus, focusPath, onEnterPressHandler, children, className, ...buttonProps
+}) => {
+	const _className = `${className}${focused ? ' focused' : ''} `;
+	// eslint-disable-next-line react/button-has-type
+	return (<button className={_className} type={type} {...buttonProps}>{children}</button>);
+};
 
 Button.propTypes = {
 	label: PropTypes.string,
@@ -13,7 +16,9 @@ Button.propTypes = {
 	focused: PropTypes.bool,
 	setFocus: PropTypes.func,
 	focusPath: PropTypes.string,
-	onEnterPressHandler: PropTypes.func
+	onEnterPressHandler: PropTypes.func,
+	children: PropTypes.node.isRequired,
+	className: PropTypes.string
 };
 
 Button.defaultProps = {
@@ -22,7 +27,8 @@ Button.defaultProps = {
 	focusPath: '',
 	onEnterPressHandler: null,
 	type: 'button',
-	label: ''
+	label: '',
+	className: ''
 };
 
 export default withFocusable(Button);

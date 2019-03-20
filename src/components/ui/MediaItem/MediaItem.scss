@@ -1,0 +1,50 @@
+@import '../scss-variables/colors';
+
+.media-list-item {
+	display: block;
+	width: 100%;
+	padding: 5px;
+	background-color: $base;
+	border-radius: 3px;
+	font-size: 1.3rem;
+	float: left;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.media-list-item__info {
+	height: 3.8rem;
+	font-size: 1rem;
+	padding: .5rem;
+	box-sizing: border-box;
+	color: $text-dark;
+	background-color: $base;
+	border-radius: 0 0 3px 3px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.media-list-item:focus, .media-list-item.focused {
+	outline: -webkit-focus-ring-color auto 5px;
+}
+.media-list-item:focus .media-list-item__info, .media-list-item.focused .media-list-item__info {
+	height: 80px;
+	max-height: 90%;
+}
+.visible-on-focus {
+	display: none;
+	font-size: 1.2rem;
+}
+.media-list-item:focus .visible-on-focus,
+.media-list-item.focused .visible-on-focus {
+	display: block;
+}
+.media-list-item .media-rating {
+	margin-right: 5px;
+}
+.media-list-item .media-release-date {
+	margin-top: 4px;
+}

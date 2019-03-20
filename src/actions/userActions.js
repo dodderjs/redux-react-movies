@@ -1,5 +1,5 @@
 import USER from '../constants/user';
-import { loginURL } from '../../configs';
+import { loginURL } from '../configs';
 
 export const logout = () => ({
 	type: USER.LOGOUT,

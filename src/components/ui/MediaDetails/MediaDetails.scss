@@ -1,0 +1,140 @@
+@import '../scss-variables/colors';
+
+.media-details {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+	background-color: $details-bg;
+	padding-bottom: 50px;
+}
+
+.media-details__header {
+	height: 4rem;
+	display: flex;
+}
+
+.media-details__button-back,
+.media-details__button-play {
+	flex: 1;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 0;
+	border: 0 none;
+	background-color: $base;
+}
+.media-details__button-back {
+	border-right: 1px solid $not-important-dark;
+}
+.media-details__button-back span,
+.media-details__button-play span {
+	color: #515151;
+	font-size: 2rem;
+	display: block;
+	line-height: 4rem;
+	box-sizing: border-box;
+}
+.media-details__button-back span svg,
+.media-details__button-play span svg {
+	vertical-align: text-top;
+}
+
+.media-details__button-back:active,
+.media-details__button-back:focus,
+.media-details__button-play:active,
+.media-details__button-play:focus {
+	outline: none;
+}
+
+.media-details__button-back.focused span,
+.media-details__button-play.focused span {
+	color: $link-hover;
+	box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
+}
+
+.media-details__container {
+	padding: 0 10px;
+	position: relative;
+}
+
+@media screen and (min-width: 768px) {
+	.media-details__container {
+		padding: 0 20px;
+	}
+}
+
+.media-details__title {
+	margin-top: 20px;
+	font-size: 24px;
+	color: $text-dark;
+}
+
+@media screen and (min-width: 768px) {
+	.media-details__title {
+		font-size: 36px;
+	}
+}
+
+.media-details__rating {
+	position: absolute;
+	right: 1rem;
+	top: -6rem;
+}
+
+.media-details__infobar-item {
+	display: block;
+	font-size: 16px;
+	height: 35px;
+	line-height: 35px;
+	color: $text-dark;
+}
+
+.media-details__infobar-item .label {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+	.media-details__infobar {
+		display: flex;
+	}
+
+	.media-details__infobar-item {
+		flex: 1;
+		font-size: 20px;
+	}
+
+	.media-details__infobar-item:nth-child(2) {
+		text-align: center;
+	}
+
+	.media-details__infobar-item:nth-child(3) {
+		text-align: right;
+	}
+
+	.media-details__infobar-item .label {
+		display: none;
+	}
+}
+
+.media-details__description {
+	margin: 10px -10px 0;
+	font-size: 18px;
+	line-height: 24px;
+	background-color: $app-bg;
+	padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+	.media-details__description {
+		margin: 10px -20px 0;
+		padding: 20px;
+	}
+}
+
+.media-details__trailer {
+	color: $text-dark;
+	font-size: 20px;
+	margin-top: 20px;
+}

@@ -62,11 +62,12 @@ class LoginForm extends Component {
 				</div>
 				<FocusableButton
 					type="submit"
-					label="Log in"
 					onClick={this.onSubmit}
 					focusPath="loginButton"
 					className="button button-login button-block"
-				/>
+				>
+					<span>Log in</span>
+				</FocusableButton>
 			</form>
 		);
 	}

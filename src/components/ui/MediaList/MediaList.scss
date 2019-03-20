@@ -1,0 +1,34 @@
+@import '../scss-variables/breakpoints';
+
+.media-list {
+	overflow: auto;
+}
+.media-list-element {
+	float: left;
+	width: 100%;
+	padding: 5px 0;
+	box-sizing: border-box;
+}
+
+@media screen and (min-width: $breakpoint-s) {
+	.media-list-element {
+		width: 50%;
+		padding: 5px;
+	}
+}
+
+@media screen and (min-width: $breakpoint-m) {
+	.media-list-element {
+		width: 33.3%;
+	}
+}
+@media screen and (min-width: $breakpoint-xl) {
+	.media-list-element {
+		width: 25%;
+	}
+}
+
+@viewport{
+	zoom: 1.0;
+/*	width: device-width;*/
+}

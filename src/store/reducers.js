@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import ERROR from '../constants/error';
 import userReducer from './userReducer';
+import mediaReducer from './mediaReducer';
 
 export const errors = (state = [], action) => {
 	switch (action.type) {
@@ -22,5 +23,6 @@ export const errors = (state = [], action) => {
 export default (history) => combineReducers({
 	errors,
 	user: userReducer,
+	medias: mediaReducer,
 	router: connectRouter(history),
 });

@@ -8,12 +8,14 @@ import App from '.';
 import PrivateRoute from './containers/PrivateRoute';
 import MediaPage from './pages/MediaPage';
 import Whoops404 from './ui/404';
+import DetailsPage from './pages/DetailsPage';
 
 const Routes = ({ store, history }) => (
 	<Provider store={store}>
 		<ConnectedRouter history={history}>
 			<App>
 				<Switch>
+					<PrivateRoute path="/details/:id" component={DetailsPage} />
 					<PrivateRoute path="/" exact component={MediaPage} />
 					<Route path="*" component={Whoops404} />
 				</Switch>
